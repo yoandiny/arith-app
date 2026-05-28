@@ -21,7 +21,7 @@ public class ArithController {
 
     @PostMapping("/substract")
     public int substract(@RequestBody Operands operands) {
-        return arithService.Addition(operands.a(), operands.b());
+        return arithService.Substract(operands.a(), operands.b());
     }
 
     public record Operands(int a, int b) {}
