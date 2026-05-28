@@ -15,14 +15,19 @@ public class ArithController {
     }
 
     @PostMapping("/add")
-    public int add(@RequestBody Operands operands) {
+    public double add(@RequestBody Operands operands) {
         return arithService.Addition(operands.a(), operands.b());
     }
 
     @PostMapping("/substract")
-    public int substract(@RequestBody Operands operands) {
+    public double substract(@RequestBody Operands operands) {
         return arithService.Substract(operands.a(), operands.b());
     }
 
-    public record Operands(int a, int b) {}
+    @PostMapping("/multiplication")
+    public double multiplication(@RequestBody Operands operands) {
+        return arithService.Substract(operands.a(), operands.b());
+    }
+
+    public record Operands(double a, double b) {}
 }
