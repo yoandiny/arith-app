@@ -26,7 +26,12 @@ public class ArithController {
 
     @PostMapping("/multiplication")
     public double multiplication(@RequestBody Operands operands) {
-        return arithService.Substract(operands.a(), operands.b());
+        return arithService.Multiplication(operands.a(), operands.b());
+    }
+
+    @PostMapping("/divide")
+    public double divide(@RequestBody Operands operands) {
+        return arithService.Divide(operands.a(), operands.b());
     }
 
     public record Operands(double a, double b) {}
