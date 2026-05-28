@@ -19,5 +19,10 @@ public class ArithController {
         return arithService.Addition(operands.a(), operands.b());
     }
 
+    @PostMapping("/substract")
+    public int substract(@RequestBody Operands operands) {
+        return arithService.Addition(operands.a(), operands.b());
+    }
+
     public record Operands(int a, int b) {}
 }
