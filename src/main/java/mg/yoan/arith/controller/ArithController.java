@@ -16,6 +16,9 @@ public class ArithController {
 
     @PostMapping("/add")
     public double add(@RequestBody Operands operands) {
+        if(operands.a() < 0 || operands.b() < 0){
+            throw new IllegalArgumentException("The given nummber has to be positive");
+        }
         return arithService.Addition(operands.a(), operands.b());
     }
 
@@ -31,6 +34,9 @@ public class ArithController {
 
     @PostMapping("/divide")
     public double divide(@RequestBody Operands operands) {
+        if(operands.b() == 0){
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
         return arithService.Divide(operands.a(), operands.b());
     }
 
