@@ -1,6 +1,7 @@
 package mg.yoan.arith.controller;
 
 import mg.yoan.arith.service.ArithService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,11 @@ public class ArithController {
 
     public ArithController(ArithService arithService) {
         this.arithService = arithService;
+    }
+
+    @GetMapping("/ping")
+    public String ping(){
+        return "pong";
     }
 
     @PostMapping("/add")
